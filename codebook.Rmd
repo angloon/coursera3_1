@@ -1,0 +1,37 @@
+---
+title: "Codebook for Assignment 2"
+output: html_document
+---
+
+## Data 
+
+The data for this assignment can be downloaded from 
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+A full description is available at the site where the data was obtained: 
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
+
+## Data Cleaning done
+
+The data that is required was originally found in 3 separate files for both the test and training data set. 
+
+1. The activity description from activity_labels.txt was joined to the y_test.txt and y_train.txt datasets based on activity id.
+2. Meaningful names were assigned to column names 
+  - The subject ID was assigned as "subject"
+  - Activity description column from step 1 was assigned as "activity"
+  - Column names were assigned to X_test.txt variables from features.txt
+3. All the above columns were column bound to create the dataset needed.
+
+
+## Data Transformations done
+
+The R script called run_analysis.R does the following -
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Assigns descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names. 
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+6. Saves the output in tidy.txt in the working directory
